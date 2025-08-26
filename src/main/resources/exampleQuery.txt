@@ -1,0 +1,36 @@
+query item {
+  itemById(id: "1") {
+  id
+  name
+  type
+}
+}
+
+query item {
+  itemById(id: "1") {
+    id
+    name
+    type
+    itemProperty {
+      id
+      name
+    }
+  }
+}
+
+query item {
+  itemByItemProperty(id: 1, name: "One") {
+    id
+    name
+    type
+  }
+}
+
+query item {
+  itemByItemProperty(id: 1) {
+    id
+    name
+    type
+  }
+}
+

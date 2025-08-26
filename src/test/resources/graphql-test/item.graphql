@@ -1,0 +1,11 @@
+query item($id: ID) {
+    itemById(id: $id) {
+        id
+        name
+        type
+        itemProperty {
+            id
+            name
+        }
+    }
+}

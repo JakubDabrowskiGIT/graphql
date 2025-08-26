@@ -1,16 +1,22 @@
 type Query {
-    bookById(id: ID): Book
+    itemById(id: ID): Item
+    itemByItemProperty(id: ID, name: String): Item
 }
 
-type Book {
+type Item {
     id: ID
     name: String
-    pageCount: Int
-    author: Author
+    type: Type
+    itemProperty: ItemProperty
 }
 
-type Author {
-    id: ID
-    firstName: String
-    lastName: String
+enum Type {
+    ALPHA
+    BETA
+    OMEGA
+}
+
+type ItemProperty {
+    id: Int
+    name: String
 }
