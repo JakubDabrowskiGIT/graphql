@@ -1,9 +1,9 @@
 server:
-  port: 8086
+  port: 8080
 
 spring:
   application:
-    name: t-app-gway
+    name: app-gway
   graphql:
     graphiql:
       enabled: true
