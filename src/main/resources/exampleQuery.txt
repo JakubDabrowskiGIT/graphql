@@ -1,13 +1,37 @@
-query item {
-  itemById(id: "1") {
-  id
-  name
-  type
-}
-}
+    {
+      itemById(id: 1) {
+      id
+      name
+      type
+      itemProperty {
+        id
+        name
+      }
+      }
+    }
 
-query item {
-  itemById(id: "1") {
+  {
+    itemByItemProperty(id: 1, name: "One") {
+    id
+    name
+    type
+    }
+  }
+
+  {
+    itemByItemProperty(id: 1) {
+    id
+    name
+    type
+    itemProperty {
+      id
+      name
+    }
+    }
+  }
+
+{
+  getByItem(item: {name: "Name2"}) {
     id
     name
     type
@@ -18,19 +42,14 @@ query item {
   }
 }
 
-query item {
-  itemByItemProperty(id: 1, name: "One") {
+{
+  getByItem(item: {name: "Name2", type: BETA}) {
     id
     name
     type
+    itemProperty {
+      id
+      name
+    }
   }
 }
-
-query item {
-  itemByItemProperty(id: 1) {
-    id
-    name
-    type
-  }
-}
-

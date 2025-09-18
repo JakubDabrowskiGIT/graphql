@@ -1,5 +1,6 @@
 package com.graphql;
 
+import java.util.List;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
@@ -16,6 +17,11 @@ public class ItemController {
     @QueryMapping
     public Item itemByItemProperty(@Argument int id, @Argument String name) {
         return Item.getByItemPropertyId(id);
+    }
+
+    @QueryMapping
+    public List<Item> getByItem(@Argument Item item) {
+        return Item.getByItem(item);
     }
 
     @SchemaMapping

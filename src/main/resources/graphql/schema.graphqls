@@ -1,13 +1,20 @@
 type Query {
-    itemById(id: ID): Item
-    itemByItemProperty(id: ID, name: String): Item
+    itemById(id: ID): ItemType
+    itemByItemProperty(id: ID, name: String): ItemType
+    getByItem(item : ItemInput): [ItemType]
 }
 
-type Item {
+type ItemType {
     id: ID
     name: String
     type: Type
     itemProperty: ItemProperty
+}
+
+input ItemInput {
+    id: ID
+    name: String
+    type: Type
 }
 
 enum Type {
